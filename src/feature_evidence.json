@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-header-component-to-import-the-logo-image-using-vite-s-asset-import-syntax-import-logosrc-from-assets-kattar-sanatani-yodha-logo-jpg-instead-of-using-a-string-path-ensuring-the-image-is-properly-bundled-and-resolved-at-runtime",
-      "featureTitle": "Update the Header component to import the logo image using Vite's asset import syntax (import logoSrc from '/assets/kattar-sanatani-yodha-logo.jpg') instead of using a string path, ensuring the image is properly bundled and resolved at runtime",
+      "featureId": "feature-in-the-programssection-component-replace-the-text-diverse-initiatives-dedicated-to-preserving-tradition-spreading-knowledge-and-serving-the-community-with",
+      "featureTitle": "In the ProgramsSection component, replace the text 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' with 'धर्मो रक्षति रक्षितः'",
       "files": [
-        "frontend/src/components/Header.tsx"
+        "frontend/src/components/ProgramsSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,25 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-herosection-component-to-import-the-background-image-using-vite-s-asset-import-syntax-import-bgsrc-from-assets-kattar-sanatani-yodha-logo-jpg-and-apply-it-to-the-background-using-inline-styles-or-css-in-js-preserving-the-existing-gradient-overlay-and-layout-structure",
-      "featureTitle": "Update the HeroSection component to import the background image using Vite's asset import syntax (import bgSrc from '/assets/kattar-sanatani-yodha-logo.jpg') and apply it to the background using inline styles or CSS-in-JS, preserving the existing gradient overlay and layout structure",
-      "files": [
-        "frontend/src/components/HeroSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-11"
+        "REQ-15"
       ],
       "confidence": "high"
     }

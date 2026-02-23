@@ -1,12 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 9,
+  "projectStateVersion": 17,
   "summary": "Website for not-for-profit organization Kattar Sanatani Yodha (Odisha)",
   "architectural_notes": [],
-  "known_issues": [
-    "Logo and background images not displaying due to incorrect Vite asset path handling"
-  ],
-  "isFixRequest": true,
+  "known_issues": [],
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-create-a-homepage-that-introduces-kattar-sanatani-yodha-odisha-as-a-non-profit-organization-including-a-hero-section-with-the-organization-name-and-a-brief-mission-statement",
@@ -95,6 +93,38 @@
         "REQ-11"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-in-the-getinvolvedsection-component-add-a-become-a-member-button-directly-attached-to-or-positioned-near-the-text-join-our-community-of-dedicated-individuals-working-to-preserve-and-promote-sanatana-dharma-values-the-button-should-link-to-the-external-membership-form-at-https-kv8n70np-forms-app-untitled-form-and-open-in-a-new-tab-maintaining-the-existing-visual-design-language-with-saffron-terracotta-accent-colors",
+      "title": "In the GetInvolvedSection component, add a 'Become a Member' button directly attached to or positioned near the text 'Join our community of dedicated individuals working to preserve and promote Sanatana Dharma values.' The button should link to the external membership form at https://kv8n70np.forms.app/untitled-form and open in a new tab, maintaining the existing visual design language with saffron/terracotta accent colors.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-contactsection-component-to-display-the-email-address-omkardansana1-gmail-com-and-phone-number-708981360-in-the-contact-information-area-ensuring-they-are-formatted-consistently-with-the-existing-design-language-and-layout-patterns",
+      "title": "Update the ContactSection component to display the email address 'omkardansana1@gmail.com' and phone number '708981360' in the contact information area, ensuring they are formatted consistently with the existing design language and layout patterns.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-community-service-image-in-the-aboutsection-component-with-the-uploaded-images-1-jpg-file-maintaining-the-existing-layout-structure-and-responsive-behavior",
+      "title": "Replace the community service image in the AboutSection component with the uploaded 'images (1).jpg' file, maintaining the existing layout structure and responsive behavior",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-programssection-component-replace-the-text-diverse-initiatives-dedicated-to-preserving-tradition-spreading-knowledge-and-serving-the-community-with",
+      "title": "In the ProgramsSection component, replace the text 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' with 'धर्मो रक्षति रक्षितः'",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -113,6 +143,30 @@
     {
       "id": "AR-3",
       "summary": "Set uploaded image as logo and background image",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add 'Become a Member' button attached to the 'Join our community...' text in Get Involved section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add contact information: email omkardansana1@gmail.com and mobile 708981360",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Change the About Us section image to the newly uploaded image",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Change 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' to 'धर्मो रक्षति रक्षितः'",
       "reqIds": [],
       "status": "pending"
     }

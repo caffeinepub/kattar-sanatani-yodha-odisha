@@ -16,7 +16,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="/assets/generated/community-service.dim_800x600.png"
+              src="/assets/images (1).jpg"
               alt="Community Service"
               className="rounded-lg shadow-lg w-full"
             />
@@ -60,7 +60,7 @@ export default function AboutSection() {
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">Our Values</h3>
                 <p className="text-muted-foreground">
-                  Dharma, devotion, service, and cultural preservation guide everything we do. We believe in strengthening our community through education, tradition, and compassionate action.
+                  Dharma, devotion, service, and compassionate action guide everything we do. We believe in strengthening our community through education, tradition, and compassionate action.
                 </p>
               </div>
             </div>

@@ -131,7 +131,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
                     <p className="text-sm text-muted-foreground">
-                      info@kattarsanataniyodha.org
+                      omkardansana1@gmail.com
                     </p>
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
                     <p className="text-sm text-muted-foreground">
-                      Available upon request
+                      708981360
                     </p>
                   </div>
                 </div>

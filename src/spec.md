@@ -1,11 +1,9 @@
 # Specification
 
 ## Summary
-**Goal:** Fix logo and background image display issues in the Header and HeroSection components.
+**Goal:** Update the Programs section tagline to display Sanskrit text.
 
 **Planned changes:**
-- Update Header component to import logo using Vite's asset import syntax
-- Update HeroSection component to import background image using Vite's asset import syntax
-- Apply background image using inline styles or CSS-in-JS while preserving gradient overlay
+- Replace the English tagline "Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community" with the Sanskrit text "धर्मो रक्षति रक्षितः" in the ProgramsSection component
 
-**User-visible outcome:** Logo and background image display correctly without console errors.
+**User-visible outcome:** The Programs section will display the Sanskrit tagline "धर्मो रक्षति रक्षितः" instead of the English text, maintaining the existing styling and layout.

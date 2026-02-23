@@ -43,7 +43,7 @@ export default function ProgramsSection() {
             Our Programs
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Initiatives dedicated to preserving our heritage and serving our community
+            धर्मो रक्षति रक्षितः
           </p>
         </div>
 

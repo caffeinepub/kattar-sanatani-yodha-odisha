@@ -1,32 +1,14 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-23T15:41:23.528Z",
-  "summary": "The diff shows that both Header.tsx and HeroSection.tsx still use string paths ('/assets/kattar sanatani yodha logo.jpg') instead of Vite's import syntax. Neither component imports the image using 'import logoSrc from ...' or 'import bgSrc from ...' as required. The requirements to use Vite's asset import syntax are completely missing from the implementation.",
-  "missing_requirements": [
-    {
-      "id": "REQ-10",
-      "requirement": "Update the Header component to import the logo image using Vite's asset import syntax (import logoSrc from '/assets/kattar-sanatani-yodha-logo.jpg') instead of using a string path",
-      "reason": "The Header.tsx component still uses a string path src='/assets/kattar sanatani yodha logo.jpg' instead of importing the image with Vite's import syntax",
-      "evidence": [
-        "frontend/src/components/Header.tsx"
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "requirement": "Update the HeroSection component to import the background image using Vite's asset import syntax (import bgSrc from '/assets/kattar-sanatani-yodha-logo.jpg') and apply it to the background using inline styles or CSS-in-JS",
-      "reason": "The HeroSection.tsx component still uses a string path src='/assets/kattar sanatani yodha logo.jpg' instead of importing the image with Vite's import syntax",
-      "evidence": [
-        "frontend/src/components/HeroSection.tsx"
-      ]
-    }
-  ],
+  "generatedAt": "2026-02-23T16:35:43.332Z",
+  "summary": "The diff fully implements REQ-15. The ProgramsSection component has been successfully updated to replace the English tagline with the Sanskrit text 'धर्मो रक्षति रक्षितः'. The implementation preserves the existing structure, styling, and layout.",
+  "missing_requirements": [],
   "hallucinated_features": [],
   "confidence": 0.95,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/Header.tsx",
-    "frontend/src/components/HeroSection.tsx",
+    "frontend/src/components/ProgramsSection.tsx",
     "project_state.json"
   ]
 }

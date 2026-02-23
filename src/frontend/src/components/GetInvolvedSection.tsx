@@ -1,6 +1,6 @@
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { UserPlus, HandHeart, Calendar, Share2 } from 'lucide-react';
+import { UserPlus, HandHeart, Calendar, Share2, ArrowRight } from 'lucide-react';
 
 export default function GetInvolvedSection() {
   const ways = [
@@ -8,21 +8,25 @@ export default function GetInvolvedSection() {
       icon: UserPlus,
       title: 'Become a Member',
       description: 'Join our community of dedicated individuals working to preserve and promote Sanatana Dharma values.',
+      hasButton: true,
     },
     {
       icon: HandHeart,
       title: 'Volunteer',
       description: 'Contribute your time and skills to our various programs, events, and community service initiatives.',
+      hasButton: false,
     },
     {
       icon: Calendar,
       title: 'Attend Events',
       description: 'Participate in our cultural programs, festivals, satsangs, and educational workshops.',
+      hasButton: false,
     },
     {
       icon: Share2,
       title: 'Spread Awareness',
       description: 'Help us reach more people by sharing our mission and activities within your network.',
+      hasButton: false,
     },
   ];
 
@@ -48,9 +52,26 @@ export default function GetInvolvedSection() {
                 <CardTitle className="text-lg">{way.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-muted-foreground">
+                <CardDescription className="text-muted-foreground mb-4">
                   {way.description}
                 </CardDescription>
+                {way.hasButton && (
+                  <Button
+                    size="sm"
+                    className="bg-terracotta hover:bg-terracotta/90 text-white font-medium mt-2"
+                    asChild
+                  >
+                    <a
+                      href="https://kv8n70np.forms.app/untitled-form"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1"
+                    >
+                      Join Now
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}

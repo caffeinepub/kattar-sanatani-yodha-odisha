@@ -1,56 +1,29 @@
 {
   "kind": "build_request",
-  "title": "Fix logo and background image not displaying",
-  "priority": "high",
+  "title": "Update Programs section tagline to Sanskrit text",
+  "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-10",
-      "text": "Update the Header component to import the logo image using Vite's asset import syntax (import logoSrc from '/assets/kattar-sanatani-yodha-logo.jpg') instead of using a string path, ensuring the image is properly bundled and resolved at runtime",
+      "id": "REQ-15",
+      "text": "In the ProgramsSection component, replace the text 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' with 'धर्मो रक्षति रक्षितः'",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-last"
+          "msg-user-latest"
         ],
         "quotes": [
-          "fix the banner and background image not showing"
+          "CHANGE FROM Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community TO धर्मो रक्षति रक्षितः"
         ]
       },
       "acceptanceCriteria": [
-        "Logo image displays correctly in the Header component",
-        "Image path is resolved through Vite's import system",
-        "No console errors related to missing image assets"
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "text": "Update the HeroSection component to import the background image using Vite's asset import syntax (import bgSrc from '/assets/kattar-sanatani-yodha-logo.jpg') and apply it to the background using inline styles or CSS-in-JS, preserving the existing gradient overlay and layout structure",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-last"
-        ],
-        "quotes": [
-          "fix the banner and background image not showing"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Background image displays correctly in the HeroSection",
-        "Gradient overlay remains intact over the background image",
-        "Image path is resolved through Vite's import system",
-        "No console errors related to missing image assets"
+        "The ProgramsSection component displays 'धर्मो रक्षति रक्षितः' instead of 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community'",
+        "The Sanskrit text is properly rendered with correct UTF-8 encoding",
+        "The text styling and layout remain consistent with the existing design"
       ]
     }
   ],
-  "constraints": [
-    "Preserve the existing gradient overlay in HeroSection",
-    "Maintain current responsive sizing and layout behavior",
-    "Do not modify the actual image file or its location in the assets folder"
-  ],
-  "nonGoals": [
-    "Changing the image itself",
-    "Modifying the visual design or color scheme",
-    "Adding new image optimization or processing logic"
-  ],
+  "constraints": [],
+  "nonGoals": [],
   "imageRequirements": {
     "required": [],
     "edits": []

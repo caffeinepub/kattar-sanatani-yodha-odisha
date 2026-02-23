@@ -1,0 +1,58 @@
+{
+  "kind": "build_request",
+  "title": "Fix logo and background image not displaying",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "text": "Update the Header component to import the logo image using Vite's asset import syntax (import logoSrc from '/assets/kattar-sanatani-yodha-logo.jpg') instead of using a string path, ensuring the image is properly bundled and resolved at runtime",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "fix the banner and background image not showing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo image displays correctly in the Header component",
+        "Image path is resolved through Vite's import system",
+        "No console errors related to missing image assets"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Update the HeroSection component to import the background image using Vite's asset import syntax (import bgSrc from '/assets/kattar-sanatani-yodha-logo.jpg') and apply it to the background using inline styles or CSS-in-JS, preserving the existing gradient overlay and layout structure",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "fix the banner and background image not showing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Background image displays correctly in the HeroSection",
+        "Gradient overlay remains intact over the background image",
+        "Image path is resolved through Vite's import system",
+        "No console errors related to missing image assets"
+      ]
+    }
+  ],
+  "constraints": [
+    "Preserve the existing gradient overlay in HeroSection",
+    "Maintain current responsive sizing and layout behavior",
+    "Do not modify the actual image file or its location in the assets folder"
+  ],
+  "nonGoals": [
+    "Changing the image itself",
+    "Modifying the visual design or color scheme",
+    "Adding new image optimization or processing logic"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

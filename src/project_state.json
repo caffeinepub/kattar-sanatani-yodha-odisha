@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Website for not-for-profit organization Kattar Sanatani Yodha (Odisha)",
+  "architectural_notes": [],
+  "known_issues": [
+    "Logo and background images not displaying due to incorrect Vite asset path handling"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-homepage-that-introduces-kattar-sanatani-yodha-odisha-as-a-non-profit-organization-including-a-hero-section-with-the-organization-name-and-a-brief-mission-statement",
+      "title": "Create a homepage that introduces Kattar Sanatani Yodha (Odisha) as a non-profit organization, including a hero section with the organization name and a brief mission statement",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-us-section-that-describes-the-organization-s-purpose-values-and-community-impact-in-odisha",
+      "title": "Create an About Us section that describes the organization's purpose, values, and community impact in Odisha",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-programs-or-services-section-that-showcases-the-organization-s-initiatives-and-activities",
+      "title": "Create a Programs or Services section that showcases the organization's initiatives and activities",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-us-section-with-a-contact-form-for-inquiries-and-information-about-how-to-reach-the-organization",
+      "title": "Create a Contact Us section with a contact form for inquiries and information about how to reach the organization",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-get-involved-or-volunteer-section-that-explains-how-people-can-support-or-participate-in-the-organization-s-work",
+      "title": "Create a Get Involved or Volunteer section that explains how people can support or participate in the organization's work",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-cohesive-visual-design-inspired-by-traditional-indian-aesthetics-with-warm-earth-tones-saffron-terracotta-deep-gold-and-elegant-typography-that-reflects-the-organization-s-cultural-heritage-and-non-profit-nature",
+      "title": "Implement a cohesive visual design inspired by traditional Indian aesthetics with warm earth tones (saffron, terracotta, deep gold) and elegant typography that reflects the organization's cultural heritage and non-profit nature",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-become-a-member-button-in-the-getinvolvedsection-component-to-link-to-the-external-form-at-https-kv8n70np-forms-app-untitled-form-when-clicked-opening-in-a-new-tab",
+      "title": "Update the 'Become a Member' button in the GetInvolvedSection component to link to the external form at https://kv8n70np.forms.app/untitled-form when clicked, opening in a new tab",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-logo-in-the-header-component-with-the-uploaded-kattar-sanatani-yodha-logo-jpg-image-maintaining-proper-sizing-and-responsive-behavior",
+      "title": "Replace the current logo in the Header component with the uploaded 'kattar sanatani yodha logo.jpg' image, maintaining proper sizing and responsive behavior",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-background-image-in-the-herosection-component-with-the-uploaded-kattar-sanatani-yodha-logo-jpg-image-preserving-the-existing-gradient-overlay-and-layout-structure",
+      "title": "Replace the current background image in the HeroSection component with the uploaded 'kattar sanatani yodha logo.jpg' image, preserving the existing gradient overlay and layout structure",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-component-to-import-the-logo-image-using-vite-s-asset-import-syntax-import-logosrc-from-assets-kattar-sanatani-yodha-logo-jpg-instead-of-using-a-string-path-ensuring-the-image-is-properly-bundled-and-resolved-at-runtime",
+      "title": "Update the Header component to import the logo image using Vite's asset import syntax (import logoSrc from '/assets/kattar-sanatani-yodha-logo.jpg') instead of using a string path, ensuring the image is properly bundled and resolved at runtime",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-herosection-component-to-import-the-background-image-using-vite-s-asset-import-syntax-import-bgsrc-from-assets-kattar-sanatani-yodha-logo-jpg-and-apply-it-to-the-background-using-inline-styles-or-css-in-js-preserving-the-existing-gradient-overlay-and-layout-structure",
+      "title": "Update the HeroSection component to import the background image using Vite's asset import syntax (import bgSrc from '/assets/kattar-sanatani-yodha-logo.jpg') and apply it to the background using inline styles or CSS-in-JS, preserving the existing gradient overlay and layout structure",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create website for not-for-profit organization",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Link 'Become a Member' button to external form at https://kv8n70np.forms.app/untitled-form",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Set uploaded image as logo and background image",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Kattar Sanatani Yodha (Odisha)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

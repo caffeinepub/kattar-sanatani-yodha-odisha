@@ -1,0 +1,40 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix logo and background image not displaying",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "summary": "Update Header component to use Vite asset import for logo image",
+      "acceptanceCriteria": [
+        "Logo image displays correctly in the Header component",
+        "Image path is resolved through Vite's import system",
+        "No console errors related to missing image assets"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Replace the string path reference to the logo with Vite's asset import syntax. Add `import logoSrc from '/assets/kattar-sanatani-yodha-logo.jpg'` at the top of the file and update the img src attribute to use the imported logoSrc variable instead of a string path. This ensures Vite properly bundles and resolves the image asset at runtime."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Update HeroSection component to use Vite asset import for background image",
+      "acceptanceCriteria": [
+        "Background image displays correctly in the HeroSection",
+        "Gradient overlay remains intact over the background image",
+        "Image path is resolved through Vite's import system",
+        "No console errors related to missing image assets"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Replace the string path reference to the background image with Vite's asset import syntax. Add `import bgSrc from '/assets/kattar-sanatani-yodha-logo.jpg'` at the top of the file and update the background-image CSS property to use the imported bgSrc variable (e.g., via inline style `backgroundImage: `url(${bgSrc})`). Preserve the existing gradient overlay and all layout structure to maintain the current visual design."
+        }
+      ]
+    }
+  ]
+}

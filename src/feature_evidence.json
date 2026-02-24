@@ -2,20 +2,105 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-in-the-programssection-component-replace-the-text-diverse-initiatives-dedicated-to-preserving-tradition-spreading-knowledge-and-serving-the-community-with",
-      "featureTitle": "In the ProgramsSection component, replace the text 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' with 'धर्मो रक्षति रक्षितः'",
+      "featureId": "feature-create-an-admin-dashboard-page-that-displays-all-contact-form-submissions-from-the-backend-in-a-table-format-showing-name-email-message-and-timestamp-for-each-submission",
+      "featureTitle": "Create an admin dashboard page that displays all contact form submissions from the backend in a table format, showing name, email, message, and timestamp for each submission",
       "files": [
-        "frontend/src/components/ProgramsSection.tsx"
+        "frontend/src/components/SubmissionsTable.tsx",
+        "frontend/src/pages/AdminDashboard.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-15"
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-search-and-filter-functionality-on-the-admin-dashboard-to-allow-filtering-submissions-by-name-email-or-message-content",
+      "featureTitle": "Implement search and filter functionality on the admin dashboard to allow filtering submissions by name, email, or message content",
+      "files": [
+        "frontend/src/components/SubmissionsTable.tsx",
+        "frontend/src/hooks/useSubmissionFilter.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-export-functionality-to-download-form-submission-data-as-csv-or-json-format-from-the-admin-dashboard",
+      "featureTitle": "Add export functionality to download form submission data as CSV or JSON format from the admin dashboard",
+      "files": [
+        "frontend/src/components/ExportButton.tsx",
+        "frontend/src/pages/AdminDashboard.tsx",
+        "frontend/src/utils/exportData.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-authentication-using-internet-identity-to-restrict-admin-panel-access-so-only-authenticated-users-can-view-the-admin-dashboard",
+      "featureTitle": "Implement authentication using Internet Identity to restrict admin panel access so only authenticated users can view the admin dashboard",
+      "files": [
+        "frontend/src/components/AdminGuard.tsx",
+        "frontend/src/components/LoginButton.tsx",
+        "frontend/src/hooks/useAdminCheck.ts",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-routing-to-separate-the-admin-panel-from-the-public-facing-homepage-with-a-distinct-url-path-for-the-admin-interface",
+      "featureTitle": "Create routing to separate the admin panel from the public-facing homepage, with a distinct URL path for the admin interface",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
       ],
       "confidence": "high"
     }

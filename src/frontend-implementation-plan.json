@@ -1,21 +1,131 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update Programs section tagline to Sanskrit text",
+  "title": "Add admin panel with authentication for form submission management",
   "requirements": [
     {
-      "id": "REQ-15",
-      "summary": "Replace ProgramsSection tagline with Sanskrit text 'धर्मो रक्षति रक्षितः'",
+      "id": "REQ-1",
+      "summary": "Create an admin dashboard page that displays all contact form submissions from the backend in a table format",
       "acceptanceCriteria": [
-        "The ProgramsSection component displays 'धर्मो रक्षति रक्षितः' instead of 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community'",
-        "The Sanskrit text is properly rendered with correct UTF-8 encoding",
-        "The text styling and layout remain consistent with the existing design"
+        "Admin page renders a table with columns for name, email, message, and any timestamp data",
+        "Table displays all submissions fetched from the backend getContactSubmissions function",
+        "Table is responsive and handles empty states gracefully"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/ProgramsSection.tsx",
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "create",
+          "description": "Create admin dashboard page component that fetches submissions using the getSubmissions backend function and displays them in a responsive table with columns for name, email, and message. Include empty state handling when no submissions exist. Apply saffron/terracotta/gold theme colors consistent with the existing design system."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmissions.ts",
+          "operation": "create",
+          "description": "Create a custom React Query hook that fetches contact form submissions from the backend using actor.getSubmissions(). Follow the pattern established in useQueries.ts. Enable the query only when the actor is available and the user is authenticated."
+        },
+        {
+          "path": "frontend/src/components/SubmissionsTable.tsx",
+          "operation": "create",
+          "description": "Create a reusable table component that accepts an array of ContactSubmission objects and renders them in a responsive table format with columns for name, email, and message. Include proper loading and empty states. Style consistently with the existing theme using Tailwind classes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement search and filter functionality on the admin dashboard to allow filtering submissions",
+      "acceptanceCriteria": [
+        "Search input filters table results in real-time",
+        "Filter works across name, email, and message fields",
+        "Clear/reset filter functionality is available"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SubmissionsTable.tsx",
           "operation": "modify",
-          "description": "Update the tagline text from 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' to 'धर्मो रक्षति रक्षितः'. Ensure the Sanskrit text uses proper UTF-8 encoding and maintains the existing text styling and layout."
+          "description": "Add a search input field above the table that filters submissions in real-time across name, email, and message fields. Implement client-side filtering logic using useState to maintain search term. Include a clear/reset button to remove the filter. Ensure the filtered results update immediately as the user types."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmissionFilter.ts",
+          "operation": "create",
+          "description": "Create a custom hook that manages search/filter state and provides filtered submission results. Accept submissions array as input and return filtered submissions plus search term state and setter functions. Implement case-insensitive search across name, email, and message fields."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add export functionality to download form submission data as CSV or JSON format",
+      "acceptanceCriteria": [
+        "Export button triggers download of current filtered/searched submissions",
+        "Exported file includes all submission fields",
+        "File format is either CSV or JSON"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ExportButton.tsx",
+          "operation": "create",
+          "description": "Create an export button component that accepts filtered submissions and downloads them as CSV or JSON. Implement client-side file generation using Blob and URL.createObjectURL. Include both CSV and JSON export options. Ensure all submission fields (name, email, message) are included in the export. Style the button to match the existing theme."
+        },
+        {
+          "path": "frontend/src/utils/exportData.ts",
+          "operation": "create",
+          "description": "Create utility functions for converting ContactSubmission arrays to CSV and JSON formats, and triggering browser downloads. Implement convertToCSV and convertToJSON functions that properly format the data, plus a downloadFile function that creates a Blob and triggers the download with appropriate MIME types."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "modify",
+          "description": "Integrate the ExportButton component into the admin dashboard, passing the current filtered submissions array. Position it prominently near the search/filter controls for easy access."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement authentication using Internet Identity to restrict admin panel access",
+      "acceptanceCriteria": [
+        "Admin dashboard requires Internet Identity authentication",
+        "Unauthenticated users are redirected or shown a login prompt",
+        "Authentication state persists across page refreshes",
+        "Backend validates authenticated requests if needed for sensitive operations"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AdminGuard.tsx",
+          "operation": "create",
+          "description": "Create a guard component that checks if the user is authenticated via Internet Identity and has admin role using the isCallerAdmin backend function. Use the authorization component to verify admin access. Display a login prompt with Internet Identity button for unauthenticated users, and an access denied message for authenticated non-admin users. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "modify",
+          "description": "Wrap the entire admin dashboard content with the AdminGuard component to enforce authentication and admin role verification. Ensure the dashboard content only renders after successful authentication and authorization checks."
+        },
+        {
+          "path": "frontend/src/hooks/useAdminCheck.ts",
+          "operation": "create",
+          "description": "Create a custom React Query hook that checks if the current user is an admin by calling actor.isCallerAdmin(). Enable the query only when the actor is available and the user is authenticated via Internet Identity. Return the admin status along with loading and error states."
+        },
+        {
+          "path": "frontend/src/components/LoginButton.tsx",
+          "operation": "create",
+          "description": "Create a login/logout button component following the authorization component usage pattern. Use useInternetIdentity hook to manage authentication state. On logout, clear the query cache using queryClient.clear() to remove cached application data. Handle login errors appropriately, including the 'User is already authenticated' error case."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create routing to separate the admin panel from the public-facing homepage",
+      "acceptanceCriteria": [
+        "Admin panel is accessible via a dedicated route (e.g., /admin)",
+        "Public homepage remains at root path",
+        "Navigation between routes works smoothly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace the simple HomePage rendering with React Router setup. Configure routes for '/' (HomePage) and '/admin' (AdminDashboard). Wrap routes in BrowserRouter and use Routes/Route components to handle navigation. Ensure the public homepage remains accessible at the root path."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add a conditional admin navigation link in the header that only appears for authenticated admin users. Use the useAdminCheck hook to determine visibility. Position it appropriately within the existing navigation structure. Ensure the link navigates to the /admin route."
         }
       ]
     }

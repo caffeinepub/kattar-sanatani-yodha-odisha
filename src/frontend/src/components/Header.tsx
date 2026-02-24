@@ -1,22 +1,44 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Shield } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from '@tanstack/react-router';
 import { Button } from './ui/button';
+import { useAdminCheck } from '../hooks/useAdminCheck';
+import { useInternetIdentity } from '../hooks/useInternetIdentity';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { identity } = useInternetIdentity();
+  const { data: isAdmin } = useAdminCheck();
+
+  const isAuthenticated = !!identity;
+  const showAdminLink = isAuthenticated && isAdmin;
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
+    // Navigate to home first if not already there
+    navigate({ to: '/' }).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    });
+    setMobileMenuOpen(false);
+  };
+
+  const goToAdmin = () => {
+    navigate({ to: '/admin' });
+    setMobileMenuOpen(false);
   };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-3">
+        <button
+          onClick={() => navigate({ to: '/' })}
+          className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+        >
           <img 
             src="/assets/kattar sanatani yodha logo.jpg" 
             alt="Kattar Sanatani Yodha Logo" 
@@ -26,7 +48,7 @@ export default function Header() {
             <span className="font-bold text-lg leading-tight text-saffron">Kattar Sanatani Yodha</span>
             <span className="text-xs text-muted-foreground">(Odisha)</span>
           </div>
-        </div>
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
@@ -54,6 +76,15 @@ export default function Header() {
           >
             Contact
           </button>
+          {showAdminLink && (
+            <button
+              onClick={goToAdmin}
+              className="text-sm font-medium text-saffron hover:text-saffron/80 transition-colors flex items-center gap-1"
+            >
+              <Shield className="h-4 w-4" />
+              Admin
+            </button>
+          )}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -95,6 +126,15 @@ export default function Header() {
             >
               Contact
             </button>
+            {showAdminLink && (
+              <button
+                onClick={goToAdmin}
+                className="text-sm font-medium text-saffron hover:text-saffron/80 transition-colors text-left flex items-center gap-1"
+              >
+                <Shield className="h-4 w-4" />
+                Admin
+              </button>
+            )}
           </nav>
         </div>
       )}

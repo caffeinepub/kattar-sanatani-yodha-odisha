@@ -1,29 +1,111 @@
 {
   "kind": "build_request",
-  "title": "Update Programs section tagline to Sanskrit text",
+  "title": "Add admin panel with authentication for form submission management",
+  "projectName": "Kattar Sanatani Yodha Admin",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-15",
-      "text": "In the ProgramsSection component, replace the text 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' with 'धर्मो रक्षति रक्षितः'",
+      "id": "REQ-1",
+      "text": "Create an admin dashboard page that displays all contact form submissions from the backend in a table format, showing name, email, message, and timestamp for each submission",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-latest"
+          "msg-latest"
         ],
         "quotes": [
-          "CHANGE FROM Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community TO धर्मो रक्षति रक्षितः"
+          "View all form submissions in a table"
         ]
       },
       "acceptanceCriteria": [
-        "The ProgramsSection component displays 'धर्मो रक्षति रक्षितः' instead of 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community'",
-        "The Sanskrit text is properly rendered with correct UTF-8 encoding",
-        "The text styling and layout remain consistent with the existing design"
+        "Admin page renders a table with columns for name, email, message, and any timestamp data",
+        "Table displays all submissions fetched from the backend getContactSubmissions function",
+        "Table is responsive and handles empty states gracefully"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement search and filter functionality on the admin dashboard to allow filtering submissions by name, email, or message content",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Search and filter submissions"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Search input filters table results in real-time",
+        "Filter works across name, email, and message fields",
+        "Clear/reset filter functionality is available"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add export functionality to download form submission data as CSV or JSON format from the admin dashboard",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Export data as needed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Export button triggers download of current filtered/searched submissions",
+        "Exported file includes all submission fields",
+        "File format is either CSV or JSON"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement authentication using Internet Identity to restrict admin panel access so only authenticated users can view the admin dashboard",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Add authentication so only i can access it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin dashboard requires Internet Identity authentication",
+        "Unauthenticated users are redirected or shown a login prompt",
+        "Authentication state persists across page refreshes",
+        "Backend validates authenticated requests if needed for sensitive operations"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create routing to separate the admin panel from the public-facing homepage, with a distinct URL path for the admin interface",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin panel is accessible via a dedicated route (e.g., /admin)",
+        "Public homepage remains at root path",
+        "Navigation between routes works smoothly"
       ]
     }
   ],
-  "constraints": [],
-  "nonGoals": [],
+  "constraints": [
+    "Use existing Internet Identity authentication system (useInternetIdentity hook)",
+    "Query form submissions using the existing getContactSubmissions backend function",
+    "Maintain the current public-facing website functionality",
+    "Admin panel styling should follow the existing saffron/terracotta/gold theme"
+  ],
+  "nonGoals": [
+    "Modifying the public contact form or homepage layout",
+    "Changing the backend ContactSubmission data structure",
+    "Adding email notification functionality",
+    "Creating user roles or multi-user access management",
+    "Real-time updates or WebSocket connections"
+  ],
   "imageRequirements": {
     "required": [],
     "edits": []

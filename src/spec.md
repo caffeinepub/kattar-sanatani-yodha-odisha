@@ -1,9 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Update the Programs section tagline to display Sanskrit text.
+**Goal:** Add an authenticated admin panel to view, search, filter, and export contact form submissions.
 
 **Planned changes:**
-- Replace the English tagline "Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community" with the Sanskrit text "धर्मो रक्षति रक्षितः" in the ProgramsSection component
+- Create admin dashboard page at /admin route displaying all form submissions in a table
+- Implement search and filter functionality across name, email, and message fields
+- Add export functionality to download submissions as CSV or JSON
+- Integrate Internet Identity authentication to restrict admin panel access
+- Set up routing to separate admin panel from public homepage
 
-**User-visible outcome:** The Programs section will display the Sanskrit tagline "धर्मो रक्षति रक्षितः" instead of the English text, maintaining the existing styling and layout.
+**User-visible outcome:** Administrators can log in with Internet Identity to access a dedicated admin dashboard where they can view all contact form submissions, search and filter entries, and export data for offline analysis.

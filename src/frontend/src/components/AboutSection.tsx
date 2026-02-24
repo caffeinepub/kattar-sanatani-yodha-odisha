@@ -6,10 +6,10 @@ export default function AboutSection() {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-saffron mb-4">
-            About Us
+            हमारे बारे में
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Committed to preserving our sacred traditions and serving our community
+            सनातन धर्म के हमेशा रहने वाले मूल्यों को बनाए रखना और उनका प्रचार करना, साथ ही हमारे पुराने ज्ञान पर आधारित सांस्कृतिक, शैक्षिक और सामाजिक पहलों के ज़रिए ओडिशा के लोगों की सेवा करना।
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function AboutSection() {
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-foreground">Our Mission</h3>
                 <p className="text-muted-foreground">
-                  To uphold and propagate the eternal values of Sanatana Dharma while serving the people of Odisha through cultural, educational, and social initiatives rooted in our ancient wisdom.
+                  सनातन धर्म के हमेशा रहने वाले मूल्यों को बनाए रखना और उनका प्रचार करना, साथ ही हमारे पुराने ज्ञान पर आधारित सांस्कृतिक, शैक्षिक और सामाजिक पहलों के ज़रिए ओडिशा के लोगों की सेवा करना।
                 </p>
               </div>
             </div>

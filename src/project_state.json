@@ -1,128 +1,52 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 17,
-  "summary": "Website for not-for-profit organization Kattar Sanatani Yodha (Odisha)",
-  "architectural_notes": [],
+  "projectStateVersion": 3,
+  "summary": "Project with form submissions requiring an admin panel for data management",
+  "architectural_notes": [
+    "Form submissions stored in Internet Computer canister backend",
+    "Admin panel requires authentication layer for secure access",
+    "Export functionality needed for form submission data"
+  ],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-create-a-homepage-that-introduces-kattar-sanatani-yodha-odisha-as-a-non-profit-organization-including-a-hero-section-with-the-organization-name-and-a-brief-mission-statement",
-      "title": "Create a homepage that introduces Kattar Sanatani Yodha (Odisha) as a non-profit organization, including a hero section with the organization name and a brief mission statement",
+      "id": "feature-create-an-admin-dashboard-page-that-displays-all-contact-form-submissions-from-the-backend-in-a-table-format-showing-name-email-message-and-timestamp-for-each-submission",
+      "title": "Create an admin dashboard page that displays all contact form submissions from the backend in a table format, showing name, email, message, and timestamp for each submission",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-create-an-about-us-section-that-describes-the-organization-s-purpose-values-and-community-impact-in-odisha",
-      "title": "Create an About Us section that describes the organization's purpose, values, and community impact in Odisha",
+      "id": "feature-implement-search-and-filter-functionality-on-the-admin-dashboard-to-allow-filtering-submissions-by-name-email-or-message-content",
+      "title": "Implement search and filter functionality on the admin dashboard to allow filtering submissions by name, email, or message content",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-create-a-programs-or-services-section-that-showcases-the-organization-s-initiatives-and-activities",
-      "title": "Create a Programs or Services section that showcases the organization's initiatives and activities",
+      "id": "feature-add-export-functionality-to-download-form-submission-data-as-csv-or-json-format-from-the-admin-dashboard",
+      "title": "Add export functionality to download form submission data as CSV or JSON format from the admin dashboard",
       "reqIds": [
         "REQ-3"
       ],
       "version": 1
     },
     {
-      "id": "feature-create-a-contact-us-section-with-a-contact-form-for-inquiries-and-information-about-how-to-reach-the-organization",
-      "title": "Create a Contact Us section with a contact form for inquiries and information about how to reach the organization",
+      "id": "feature-implement-authentication-using-internet-identity-to-restrict-admin-panel-access-so-only-authenticated-users-can-view-the-admin-dashboard",
+      "title": "Implement authentication using Internet Identity to restrict admin panel access so only authenticated users can view the admin dashboard",
       "reqIds": [
         "REQ-4"
       ],
       "version": 1
     },
     {
-      "id": "feature-create-a-get-involved-or-volunteer-section-that-explains-how-people-can-support-or-participate-in-the-organization-s-work",
-      "title": "Create a Get Involved or Volunteer section that explains how people can support or participate in the organization's work",
+      "id": "feature-create-routing-to-separate-the-admin-panel-from-the-public-facing-homepage-with-a-distinct-url-path-for-the-admin-interface",
+      "title": "Create routing to separate the admin panel from the public-facing homepage, with a distinct URL path for the admin interface",
       "reqIds": [
         "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-a-cohesive-visual-design-inspired-by-traditional-indian-aesthetics-with-warm-earth-tones-saffron-terracotta-deep-gold-and-elegant-typography-that-reflects-the-organization-s-cultural-heritage-and-non-profit-nature",
-      "title": "Implement a cohesive visual design inspired by traditional Indian aesthetics with warm earth tones (saffron, terracotta, deep gold) and elegant typography that reflects the organization's cultural heritage and non-profit nature",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-become-a-member-button-in-the-getinvolvedsection-component-to-link-to-the-external-form-at-https-kv8n70np-forms-app-untitled-form-when-clicked-opening-in-a-new-tab",
-      "title": "Update the 'Become a Member' button in the GetInvolvedSection component to link to the external form at https://kv8n70np.forms.app/untitled-form when clicked, opening in a new tab",
-      "reqIds": [
-        "REQ-7"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-current-logo-in-the-header-component-with-the-uploaded-kattar-sanatani-yodha-logo-jpg-image-maintaining-proper-sizing-and-responsive-behavior",
-      "title": "Replace the current logo in the Header component with the uploaded 'kattar sanatani yodha logo.jpg' image, maintaining proper sizing and responsive behavior",
-      "reqIds": [
-        "REQ-8"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-current-background-image-in-the-herosection-component-with-the-uploaded-kattar-sanatani-yodha-logo-jpg-image-preserving-the-existing-gradient-overlay-and-layout-structure",
-      "title": "Replace the current background image in the HeroSection component with the uploaded 'kattar sanatani yodha logo.jpg' image, preserving the existing gradient overlay and layout structure",
-      "reqIds": [
-        "REQ-9"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-header-component-to-import-the-logo-image-using-vite-s-asset-import-syntax-import-logosrc-from-assets-kattar-sanatani-yodha-logo-jpg-instead-of-using-a-string-path-ensuring-the-image-is-properly-bundled-and-resolved-at-runtime",
-      "title": "Update the Header component to import the logo image using Vite's asset import syntax (import logoSrc from '/assets/kattar-sanatani-yodha-logo.jpg') instead of using a string path, ensuring the image is properly bundled and resolved at runtime",
-      "reqIds": [
-        "REQ-10"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-herosection-component-to-import-the-background-image-using-vite-s-asset-import-syntax-import-bgsrc-from-assets-kattar-sanatani-yodha-logo-jpg-and-apply-it-to-the-background-using-inline-styles-or-css-in-js-preserving-the-existing-gradient-overlay-and-layout-structure",
-      "title": "Update the HeroSection component to import the background image using Vite's asset import syntax (import bgSrc from '/assets/kattar-sanatani-yodha-logo.jpg') and apply it to the background using inline styles or CSS-in-JS, preserving the existing gradient overlay and layout structure",
-      "reqIds": [
-        "REQ-11"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-getinvolvedsection-component-add-a-become-a-member-button-directly-attached-to-or-positioned-near-the-text-join-our-community-of-dedicated-individuals-working-to-preserve-and-promote-sanatana-dharma-values-the-button-should-link-to-the-external-membership-form-at-https-kv8n70np-forms-app-untitled-form-and-open-in-a-new-tab-maintaining-the-existing-visual-design-language-with-saffron-terracotta-accent-colors",
-      "title": "In the GetInvolvedSection component, add a 'Become a Member' button directly attached to or positioned near the text 'Join our community of dedicated individuals working to preserve and promote Sanatana Dharma values.' The button should link to the external membership form at https://kv8n70np.forms.app/untitled-form and open in a new tab, maintaining the existing visual design language with saffron/terracotta accent colors.",
-      "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-contactsection-component-to-display-the-email-address-omkardansana1-gmail-com-and-phone-number-708981360-in-the-contact-information-area-ensuring-they-are-formatted-consistently-with-the-existing-design-language-and-layout-patterns",
-      "title": "Update the ContactSection component to display the email address 'omkardansana1@gmail.com' and phone number '708981360' in the contact information area, ensuring they are formatted consistently with the existing design language and layout patterns.",
-      "reqIds": [
-        "REQ-13"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-community-service-image-in-the-aboutsection-component-with-the-uploaded-images-1-jpg-file-maintaining-the-existing-layout-structure-and-responsive-behavior",
-      "title": "Replace the community service image in the AboutSection component with the uploaded 'images (1).jpg' file, maintaining the existing layout structure and responsive behavior",
-      "reqIds": [
-        "REQ-14"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-programssection-component-replace-the-text-diverse-initiatives-dedicated-to-preserving-tradition-spreading-knowledge-and-serving-the-community-with",
-      "title": "In the ProgramsSection component, replace the text 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' with 'धर्मो रक्षति रक्षितः'",
-      "reqIds": [
-        "REQ-15"
       ],
       "version": 1
     }
@@ -130,49 +54,30 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Create website for not-for-profit organization",
+      "summary": "Admin panel to view all form submissions in a table",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-2",
-      "summary": "Link 'Become a Member' button to external form at https://kv8n70np.forms.app/untitled-form",
+      "summary": "Search and filter functionality for form submissions",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-3",
-      "summary": "Set uploaded image as logo and background image",
+      "summary": "Export form submission data",
       "reqIds": [],
       "status": "pending"
     },
     {
       "id": "AR-4",
-      "summary": "Add 'Become a Member' button attached to the 'Join our community...' text in Get Involved section",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Add contact information: email omkardansana1@gmail.com and mobile 708981360",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-6",
-      "summary": "Change the About Us section image to the newly uploaded image",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-7",
-      "summary": "Change 'Diverse initiatives dedicated to preserving tradition, spreading knowledge, and serving the community' to 'धर्मो रक्षति रक्षितः'",
+      "summary": "Authentication to restrict admin panel access",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "gameProjectType": "none",
-  "projectName": "Kattar Sanatani Yodha (Odisha)",
+  "projectName": "Kattar Sanatani Yodha Admin",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }
